@@ -4,15 +4,14 @@ provider "aws" {
 }
 
 module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
-
-  name = "my-vpc"
-  cidr = "${var.vpc_cidr}"
-  azs		  = "${var.azs}"
-  private_subnets = "${var.prs}"
-  public_subnets  = "${var.pus}"
-  enable_nat_gateway = true
-  enable_vpn_gateway = true
+  source 	  	= "terraform-aws-modules/vpc/aws"
+  name 		  	= "my-vpc"
+  cidr 		  	= "${var.vpc_cidr}"
+  azs		  	= "${var.azs}"
+  private_subnets 	= "${var.prs}"
+  public_subnets  	= "${var.pus}"
+  enable_nat_gateway 	= true
+  enable_vpn_gateway 	= true
 
   tags = {
     Terraform   = "true"
